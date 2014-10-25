@@ -1,0 +1,14 @@
+{
+  "name": "gateblu-ui-build",
+  "version": "1.0.0",
+  "description": "Builder for gateblu-ui",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-webkit-builder": "^0.1.3"
+  }
+}
