@@ -1,10 +1,11 @@
 var NwBuilder = require('node-webkit-builder');
 var nw = new NwBuilder({
-    files: ['**/**', '!build/**', '!cache/**'], // use the glob format
+    files: ['gateblu-ui/**', '!build/**', '!cache/**'], // use the glob format
     platforms: ['win', 'osx', 'linux32', 'linux64'],
     appName: 'Gateblu',
     appVersion: '1.4.0',
-    macIcns: './assets/gateblu.icns'
+    macIcns: './icons/gateblu.icns',
+    winIco: './icons/gateblu.ico'
 });
 
 // Log stuff you want

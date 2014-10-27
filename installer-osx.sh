@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OWD=`pwd`
+BUILD_DIR=`pwd`
 
 if [ ! -f Gateblu.dmg ]; then
   echo "You need a Gateblu.dmg in your current dir"
@@ -9,11 +9,11 @@ fi
 
 hdiutil attach Gateblu.dmg
 cd /Volumes/Gateblu
-cp -rfp $OWD/gateblu-ui/build/Gateblu/osx/Gateblu.app .
+cp -rfp $BUILD_DIR/build/Gateblu/osx/Gateblu.app .
 
 touch /Volumes/Gateblu/Gateblu.app
 
-cd $OWD
+cd $BUILD_DIR
 bless --folder /Volumes/Gateblu --openfolder /Volumes/Gateblu
 sleep 2
 

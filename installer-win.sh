@@ -1,6 +1,10 @@
 #!/bin/sh
 
-OWD=`pwd`
+BUILD_DIR=`pwd`
 
-cd $OWD/gateblu-ui/build/Gateblu/win
-zip $OWD/Gateblu.zip *
+if [ -f $BUILD_DIR/Gateblu.zip ]; then
+  rm $BUILD_DIR/Gateblu.zip
+fi
+
+cd $BUILD_DIR/build/Gateblu/win
+zip -q $BUILD_DIR/Gateblu.zip *
