@@ -7,4 +7,8 @@ if [ -f $BUILD_DIR/Gateblu.zip ]; then
 fi
 
 cd $BUILD_DIR/build/Gateblu/win
-zip -q $BUILD_DIR/Gateblu.zip *
+unzip -q package.nw
+rm package.nw
+$BUILD_DIR/node_modules/node-webkit-builder/node_modules/.bin/winresourcer --operation=Update --exeFile=Gateblu.exe --resourceType=Icongroup --resourceName=IDR_MAINFRAME --lang=1033 --resourceFile=$BUILD_DIR/icons/gateblu.ico 
+zip -rq $BUILD_DIR/Gateblu.zip *
+

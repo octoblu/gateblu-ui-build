@@ -11,5 +11,9 @@ if [ -f Gateblu-x64.tar.gz ]; then
 fi
 
 cd $BUILD_DIR/build/Gateblu
-tar czf $BUILD_DIR/Gateblu-x86.tar.gz linux32
-tar czf $BUILD_DIR/Gateblu-x64.tar.gz linux64
+mv linux32 Gateblu
+tar czf $BUILD_DIR/Gateblu-x86.tar.gz Gateblu
+mv Gateblu linux32
+mv linux64 Gateblu
+tar czf $BUILD_DIR/Gateblu-x64.tar.gz Gateblu
+mv Gateblu linux64
