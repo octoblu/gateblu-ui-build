@@ -9,6 +9,7 @@ npm install
 gulp
 cd $BUILD_DIR
 node build
+node build
 
 echo "Building Mac..."
 cd $BUILD_DIR
