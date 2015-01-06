@@ -3,9 +3,9 @@ var nw = new NwBuilder({
     files: ['gateblu-ui/**', '!build/**', '!cache/**'], // use the glob format
     platforms: ['win', 'osx', 'linux32', 'linux64'],
     appName: 'Gateblu',
-    appVersion: '1.5.5',
+    appVersion: '1.7.0',
     macIcns: './icons/gateblu.icns',
-    version: '0.10.5'
+    version: '0.11.5'
 });
 
 // Log stuff you want

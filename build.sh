@@ -1,6 +1,7 @@
 echo "Building node-webkit..."
 
 BUILD_DIR=`pwd`
+NODE_WEBKIT_VERSION=0.11.5
 ulimit -n 8192
 rm -rf gateblu-ui
 git clone git@github.com:octoblu/gateblu-ui
@@ -27,7 +28,7 @@ cd build/Gateblu/win
 mkdir -p dist/node-v0.10.32-win-x86/bin
 cp $BUILD_DIR/dist/node-v0.10.32-win-x86/node.exe dist/node-v0.10.32-win-x86/bin
 unzip -q $BUILD_DIR/dist/node-v0.10.32-win-x86/npm-1.4.9.zip -d dist/node-v0.10.32-win-x86/bin
-cp -rfp $BUILD_DIR/cache/0.10.5/win/locales locales
+cp -rfp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/win/locales locales
 mv G package.nw
 
 echo "Creating Windows Installer..."
@@ -40,7 +41,7 @@ cd build/Gateblu/linux32
 mkdir dist
 tar zxf $BUILD_DIR/dist/node-v0.10.32-linux-x86.tar.gz --directory dist/
 LC_CTYPE=C && LANG=C && sed -i '' 's/udev\.so\.0/udev.so.1/g' Gateblu 
-cp -rfp $BUILD_DIR/cache/0.10.5/linux32/locales locales
+cp -rfp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/linux32/locales locales
 mv G package.nw
 
 echo "Building Linux 64-bit..."
@@ -49,7 +50,7 @@ cd build/Gateblu/linux64
 mkdir dist
 tar zxf $BUILD_DIR/dist/node-v0.10.32-linux-x64.tar.gz --directory dist/
 LC_CTYPE=C && LANG=C && sed -i '' 's/udev\.so\.0/udev.so.1/g' Gateblu 
-cp -rfp $BUILD_DIR/cache/0.10.5/linux64/locales locales
+cp -rfp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/linux64/locales locales
 mv G package.nw
 
 echo "Creating Linux Installer..."

@@ -5,7 +5,7 @@ BUILD_DIR=`pwd`
 rm -f $BUILD_DIR/Gateblu.dmg
 
 app="$BUILD_DIR/build/Gateblu/osx/Gateblu.app"
-identity="8F861B91A0A1A5B558B25431CDCBF025143B46C5"
+identity="C5A958791641461665687C1F22275E405BB7D506"
 
 echo "### signing frameworks"
 codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/crash_inspector"
