@@ -4,7 +4,7 @@ BUILD_DIR=`pwd`
 NODE_WEBKIT_VERSION=0.11.5
 ulimit -n 8192
 rm -rf gateblu-ui
-git clone git@github.com:octoblu/gateblu-ui
+git clone git://github.com/octoblu/gateblu-ui
 cd gateblu-ui
 npm install
 gulp
