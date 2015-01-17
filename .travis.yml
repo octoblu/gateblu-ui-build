@@ -1,12 +1,13 @@
-os: osx
-language: node_js
+language: objective-c
 cache:
   bundler: true
   directories:
     - node_modules
 notifications:
   flowdock: e7454f5285e7b9ab67009802d5560490
-node_js:
-  - '0.10'
-before_install:
-  - brew update
+before_script:
+    - brew update
+    - brew upgrade xctool || true
+    - brew install node
+    - npm install
+script: cd $TRAVIS_BUILD_DIR && ./build.sh
