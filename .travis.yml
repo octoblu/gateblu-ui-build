@@ -8,5 +8,6 @@ notifications:
 before_script:
     - brew update
     - brew upgrade xctool || true
+    - brew install wine
     - npm install
 script: cd $TRAVIS_BUILD_DIR && ./build.sh
