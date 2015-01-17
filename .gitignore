@@ -37,3 +37,4 @@ build
 cache
 
 .DS_Store
+*.sublime-workspace
