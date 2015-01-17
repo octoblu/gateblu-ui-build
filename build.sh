@@ -12,6 +12,9 @@ cd $BUILD_DIR
 node build
 node build
 
+rm -rf $BUILD_DIR/packages
+mkdir -p $BUILD_DIR/packages
+
 echo "Building Mac..."
 cd $BUILD_DIR
 cd build/Gateblu/osx/Gateblu.app/Contents/Resources/app.nw

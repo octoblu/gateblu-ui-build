@@ -38,3 +38,4 @@ cache
 
 .DS_Store
 *.sublime-workspace
+packages
