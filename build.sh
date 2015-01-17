@@ -7,7 +7,7 @@ rm -rf gateblu-ui
 git clone git://github.com/octoblu/gateblu-ui
 cd gateblu-ui
 npm install
-gulp
+node_modules/.bin/gulp
 cd $BUILD_DIR
 node build
 node build
