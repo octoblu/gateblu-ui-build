@@ -3,7 +3,7 @@ var nw = new NwBuilder({
     files: ['gateblu-ui/**', '!build/**', '!cache/**'], // use the glob format
     platforms: ['win', 'osx', 'linux32', 'linux64'],
     appName: 'Gateblu',
-    appVersion: '1.7.3',
+    appVersion: '1.7.4',
     macIcns: './icons/gateblu.icns',
     version: '0.11.5'
 });
