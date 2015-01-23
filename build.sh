@@ -3,13 +3,16 @@ echo "Building node-webkit..."
 BUILD_DIR=`pwd`
 NODE_WEBKIT_VERSION=0.11.5
 ulimit -n 8192
+
+echo "Cloning gateblu-ui..."
 rm -rf gateblu-ui
 git clone git://github.com/octoblu/gateblu-ui
 cd gateblu-ui
 npm install
 node_modules/.bin/gulp
 cd $BUILD_DIR
-node build
+
+echo "Building node-webkit..."
 node build
 
 rm -rf $BUILD_DIR/packages
@@ -17,7 +20,7 @@ mkdir -p $BUILD_DIR/packages
 
 echo "Building Mac..."
 cd $BUILD_DIR
-cd build/Gateblu/osx/Gateblu.app/Contents/Resources/app.nw
+cd build/Gateblu/osx64/Gateblu.app/Contents/Resources/app.nw
 mkdir dist
 tar zxf $BUILD_DIR/dist/node-v0.10.32-darwin-x64.tar.gz --directory dist/
 
@@ -25,9 +28,12 @@ echo "Creating Mac Installer..."
 cd $BUILD_DIR
 sh installer-osx.sh
 
+echo "Only building mac for now!"
+exit 0
+
 echo "Building Windows..."
 cd $BUILD_DIR
-cd build/Gateblu/win
+cd build/Gateblu/win32
 mkdir -p dist/node-v0.10.32-win-x86/bin
 cp $BUILD_DIR/dist/node-v0.10.32-win-x86/node.exe dist/node-v0.10.32-win-x86/bin
 unzip -q $BUILD_DIR/dist/node-v0.10.32-win-x86/npm-1.4.9.zip -d dist/node-v0.10.32-win-x86/bin

@@ -1,9 +1,11 @@
+var appVersion = require('./gateblu-ui/package.json').version;
+
 var NwBuilder = require('node-webkit-builder');
 var nw = new NwBuilder({
     files: ['gateblu-ui/**', '!build/**', '!cache/**'], // use the glob format
-    platforms: ['win', 'osx', 'linux32', 'linux64'],
+    platforms: ['win', 'osx', 'linux'],
     appName: 'Gateblu',
-    appVersion: '1.7.4',
+    appVersion: appVersion,
     macIcns: './icons/gateblu.icns',
     version: '0.11.5'
 });
@@ -17,9 +19,3 @@ nw.build().then(function () {
 }).catch(function (error) {
     console.error(error);
 });
-
-// And supports callbacks
-nw.build(function(err) {
-    if(err) console.log(err);
-})
-

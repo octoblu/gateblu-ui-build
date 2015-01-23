@@ -2,12 +2,24 @@ language: objective-c
 cache:
   bundler: true
   directories:
-    - node_modules
+  - node_modules
 notifications:
   flowdock: e7454f5285e7b9ab67009802d5560490
 before_script:
-    - brew update
-    - brew upgrade xctool || true
-    - brew install wine
-    - npm install
+- brew update
+- brew upgrade xctool || true
+- npm install
 script: cd $TRAVIS_BUILD_DIR && ./build.sh
+deploy:
+- provider: s3
+  access_key_id: AKIAIT4X4NDGM2WVL6VA
+  secret_access_key:
+    secure: eoOzkPfWqD8+iSTsAGtW1SYEqf3JksaiDK+SuNrlH/+DG/Aza5DPs1mHZKrRNT8w1UXVu1MIC6ODXymuSBvyEYHrvjhtcK+2aiOnSUurPqXm1bCJUM0L1KhCdXyV+mz7DrIx2PmqhW7b1OQG48EAfmOrQZyIlt3F79YPP4k+V38=
+  bucket: gateblu
+  upload-dir: travis
+  region: us-west-2
+  skip_cleanup: true
+  local-dir: packages
+env:
+  global:
+    secure: nmcRILYl4up3jMO0cqrlDT9BLWXmXRbwByOXCTH4PX33WpaWFna4XtQfIU7Z2My4TVXBG/0enaPdPs19cRgn5xGG2urS7ZGkaBYjqObQhsGzlm+js28/nsvZIHRphNvsNHFGfxpRhuOvlOgMRFiZjMsv6kcxOUCeyXi4q3fORq8=
