@@ -3,6 +3,7 @@ cache:
   bundler: true
   directories:
   - node_modules
+  - cache
 notifications:
   flowdock: e7454f5285e7b9ab67009802d5560490
 before_script:
