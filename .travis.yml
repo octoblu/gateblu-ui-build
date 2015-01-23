@@ -6,6 +6,8 @@ cache:
   - cache
 notifications:
   flowdock: e7454f5285e7b9ab67009802d5560490
+rvm:
+  - 2.0.0
 before_script:
 - brew update
 - brew upgrade xctool || true
