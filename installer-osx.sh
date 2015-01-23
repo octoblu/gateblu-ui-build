@@ -16,8 +16,6 @@ identity="A5D9EE988CEFE25C6D04679D00F9C8C60B63C240"
 
 echo "### signing frameworks"
 codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/crash_inspector"
-codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/node-webkit Framework.framework/node-webkit Framework.tmp"
-codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/node-webkit Framework.framework/node-webkit Framework.TOC"
 codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/node-webkit Framework.framework/"
 codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/node-webkit Helper EH.app/"
 codesign --force --verify --verbose --keychain ~/Library/Keychains/mac-build.keychain --sign "$identity" "$app/Contents/Frameworks/node-webkit Helper NP.app/"
