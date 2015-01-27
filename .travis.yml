@@ -37,9 +37,9 @@ deploy:
   region: us-west-2
   skip_cleanup: true
   local-dir: travis-cache
-  # on:
-  #   tags: true
-  #   all_branches: true
+  on:
+    tags: true
+    all_branches: true
 env:
   global:
     secure: nmcRILYl4up3jMO0cqrlDT9BLWXmXRbwByOXCTH4PX33WpaWFna4XtQfIU7Z2My4TVXBG/0enaPdPs19cRgn5xGG2urS7ZGkaBYjqObQhsGzlm+js28/nsvZIHRphNvsNHFGfxpRhuOvlOgMRFiZjMsv6kcxOUCeyXi4q3fORq8=
