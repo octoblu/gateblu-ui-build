@@ -6,6 +6,6 @@ if [ -f homebrew-cache.tar.gz ]; then
     rm homebrew-cache.tar.gz
     exit 0
   fi
-  tar zvf homebrew-cache.tar.gz --directory /usr/local/Cellar
+  tar zxf homebrew-cache.tar.gz --directory /usr/local/Cellar
   brew link libtool libtiff libicns freetype jpeg libgphoto2 little-cms2 wine
 fi
