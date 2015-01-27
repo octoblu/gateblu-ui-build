@@ -11,10 +11,10 @@ before_script:
 - brew upgrade xctool || true
 - brew install curl
 - npm install
-- travis/download-homebrew.sh
+- travis/download-homebrew
 script: cd $TRAVIS_BUILD_DIR && ./build.sh
 after_script:
-- travis/cache-homebrew.sh
+- travis/cache-homebrew
 deploy:
 - provider: s3
   access_key_id: AKIAIT4X4NDGM2WVL6VA
