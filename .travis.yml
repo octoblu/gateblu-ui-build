@@ -9,8 +9,12 @@ notifications:
 before_script:
 - brew update
 - brew upgrade xctool || true
+- brew install curl
 - npm install
+- travis/download-homebrew.sh
 script: cd $TRAVIS_BUILD_DIR && ./build.sh
+after_script:
+- travis/cache-homebrew.sh
 deploy:
 - provider: s3
   access_key_id: AKIAIT4X4NDGM2WVL6VA
@@ -20,6 +24,21 @@ deploy:
   region: us-west-2
   skip_cleanup: true
   local-dir: packages
+  on:
+    tags: true
+    all_branches: true
+- provider: s3
+  access_key_id: AKIAIT4X4NDGM2WVL6VA
+  secret_access_key:
+    secure: eoOzkPfWqD8+iSTsAGtW1SYEqf3JksaiDK+SuNrlH/+DG/Aza5DPs1mHZKrRNT8w1UXVu1MIC6ODXymuSBvyEYHrvjhtcK+2aiOnSUurPqXm1bCJUM0L1KhCdXyV+mz7DrIx2PmqhW7b1OQG48EAfmOrQZyIlt3F79YPP4k+V38=
+  bucket: gateblu
+  upload-dir: travis-cache
+  region: us-west-2
+  skip_cleanup: true
+  local-dir: travis-cache
+  # on:
+  #   tags: true
+  #   all_branches: true
 env:
   global:
     secure: nmcRILYl4up3jMO0cqrlDT9BLWXmXRbwByOXCTH4PX33WpaWFna4XtQfIU7Z2My4TVXBG/0enaPdPs19cRgn5xGG2urS7ZGkaBYjqObQhsGzlm+js28/nsvZIHRphNvsNHFGfxpRhuOvlOgMRFiZjMsv6kcxOUCeyXi4q3fORq8=

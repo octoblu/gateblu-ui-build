@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "Building node-webkit..."
 
 if [ "$KEY_PASSWORD" == "" ]; then
