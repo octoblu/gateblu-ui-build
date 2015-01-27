@@ -31,5 +31,7 @@ codesign -vvv -d "$app"
 echo "### remove keychain"
 security delete-keychain mac-build.keychain
 
+umount /Volumes/Gateblu
+
 cd $BUILD_DIR
 ./create-dmg --volname Gateblu --volicon dmg/volume.icns --background dmg/background.png --window-size 512 320 --icon-size 128 --icon Gateblu.app 100 180 --hide-extension Gateblu.app --app-drop-link 400 180 packages/Gateblu.dmg $app

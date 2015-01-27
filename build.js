@@ -3,7 +3,7 @@ var appVersion = require('./gateblu-ui/package.json').version;
 var NwBuilder = require('node-webkit-builder');
 var nw = new NwBuilder({
     files: ['gateblu-ui/**', '!build/**', '!cache/**'], // use the glob format
-    platforms: ['win', 'osx', 'linux'],
+    platforms: ['win', 'osx64', 'linux'],
     appName: 'Gateblu',
     appVersion: appVersion,
     macIcns: './icons/gateblu.icns',
