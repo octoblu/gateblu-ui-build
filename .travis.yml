@@ -12,6 +12,7 @@ before_script:
 - brew install curl
 - npm install
 - cd $TRAVIS_BUILD_DIR && travis/download-homebrew
+- brew install wine
 script: cd $TRAVIS_BUILD_DIR && ./build.sh
 before_deploy:
 - cd $TRAVIS_BUILD_DIR && travis/cache-homebrew
