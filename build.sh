@@ -23,6 +23,7 @@ cd $BUILD_DIR
 echo "Building node-webkit..."
 npm install
 node build
+node build # needs to be run twice
 
 rm -rf $BUILD_DIR/packages
 mkdir -p $BUILD_DIR/packages
