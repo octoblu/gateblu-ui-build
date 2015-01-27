@@ -6,8 +6,6 @@ cache:
   - cache
 notifications:
   flowdock: e7454f5285e7b9ab67009802d5560490
-rvm:
-  - 2.2.0
 before_script:
 - brew update
 - brew upgrade xctool || true
@@ -19,7 +17,6 @@ deploy:
   secret_access_key:
     secure: eoOzkPfWqD8+iSTsAGtW1SYEqf3JksaiDK+SuNrlH/+DG/Aza5DPs1mHZKrRNT8w1UXVu1MIC6ODXymuSBvyEYHrvjhtcK+2aiOnSUurPqXm1bCJUM0L1KhCdXyV+mz7DrIx2PmqhW7b1OQG48EAfmOrQZyIlt3F79YPP4k+V38=
   bucket: gateblu
-  upload-dir: travis
   region: us-west-2
   skip_cleanup: true
   local-dir: packages
