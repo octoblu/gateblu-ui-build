@@ -43,7 +43,7 @@ cd $BUILD_DIR
 cd build/Gateblu/win32
 mkdir -p dist/node-v0.10.32-win-x86/bin
 cp $BUILD_DIR/dist/node-v0.10.32-win-x86/node.exe dist/node-v0.10.32-win-x86/bin
-unzip -q $BUILD_DIR/dist/node-v0.10.32-win-x86/npm-1.4.9.zip -d dist/node-v0.10.32-win-x86/bin
+unzip -q $BUILD_DIR/dist/node-v0.10.32-win-x86/npm-2.6.0.zip -d dist/node-v0.10.32-win-x86/bin
 mv Gateblu.exe package.nw
 cp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/win32/nw.exe Gateblu.exe
 
