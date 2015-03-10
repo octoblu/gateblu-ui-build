@@ -32,7 +32,7 @@ echo "Building Mac..."
 cd $BUILD_DIR
 cd build/Gateblu/osx64/Gateblu.app/Contents/Resources/app.nw
 mkdir dist
-tar zxf $BUILD_DIR/dist/node-v0.10.32-darwin-x64.tar.gz --directory dist/
+tar zxf $BUILD_DIR/dist/node-v0.10.35-darwin-x64.tar.gz --directory dist/
 
 echo "Creating Mac Installer..."
 cd $BUILD_DIR
@@ -41,9 +41,9 @@ sh installer-osx.sh
 echo "Building Windows..."
 cd $BUILD_DIR
 cd build/Gateblu/win32
-mkdir -p dist/node-v0.10.32-win-x86/bin
-cp $BUILD_DIR/dist/node-v0.10.32-win-x86/node.exe dist/node-v0.10.32-win-x86/bin
-unzip -q $BUILD_DIR/dist/node-v0.10.32-win-x86/npm-2.6.0.zip -d dist/node-v0.10.32-win-x86/bin
+mkdir -p dist/node-v0.10.35-win-x86/bin
+cp $BUILD_DIR/dist/node-v0.10.35-win-x86/node.exe dist/node-v0.10.35-win-x86/bin
+unzip -q $BUILD_DIR/dist/node-v0.10.35-win-x86/npm-2.6.0.zip -d dist/node-v0.10.35-win-x86/bin
 mv Gateblu.exe package.nw
 cp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/win32/nw.exe Gateblu.exe
 
@@ -55,14 +55,14 @@ echo "Building Linux 32-bit..."
 cd $BUILD_DIR
 cd build/Gateblu/linux32
 mkdir dist
-tar zxf $BUILD_DIR/dist/node-v0.10.32-linux-x86.tar.gz --directory dist/
+tar zxf $BUILD_DIR/dist/node-v0.10.35-linux-x86.tar.gz --directory dist/
 LC_CTYPE=C && LANG=C && sed -i '' 's/udev\.so\.0/udev.so.1/g' Gateblu
 
 echo "Building Linux 64-bit..."
 cd $BUILD_DIR
 cd build/Gateblu/linux64
 mkdir dist
-tar zxf $BUILD_DIR/dist/node-v0.10.32-linux-x64.tar.gz --directory dist/
+tar zxf $BUILD_DIR/dist/node-v0.10.35-linux-x64.tar.gz --directory dist/
 LC_CTYPE=C && LANG=C && sed -i '' 's/udev\.so\.0/udev.so.1/g' Gateblu
 
 echo "Creating Linux Installer..."
