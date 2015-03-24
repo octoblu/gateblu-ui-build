@@ -41,9 +41,12 @@ sh installer-osx.sh
 echo "Building Windows..."
 cd $BUILD_DIR
 cd build/Gateblu/win32
-mkdir -p dist/node-v0.10.35-win-x86/bin
-cp $BUILD_DIR/dist/node-v0.10.35-win-x86/node.exe dist/node-v0.10.35-win-x86/bin
-unzip -q $BUILD_DIR/dist/node-v0.10.35-win-x86/npm-2.6.0.zip -d dist/node-v0.10.35-win-x86/bin
+WIN_DIR=dist/node-v0.10.35-win-x86/bin
+mkdir -p $WIN_DIR/node_modules
+cp $BUILD_DIR/dist/node-v0.10.35-win-x86/node.exe $WIN_DIR
+unzip -q $BUILD_DIR/dist/node-v0.10.35-win-x86/npm-2.6.0.zip -d $WIN_DIR
+mv $WIN_DIR/npm-2.6.0 $WIN_DIR/node_modules/npm
+cp $WIN_DIR/node_modules/npm/bin/npm.cmd $WIN_DIR
 mv Gateblu.exe package.nw
 cp $BUILD_DIR/cache/$NODE_WEBKIT_VERSION/win32/nw.exe Gateblu.exe
 
